@@ -84,7 +84,7 @@ app.use(rateLimit({
         msg: "Too many requests, please try again later."
     },
     windowMs: 30 * 1000, // 30 seconds
-    max: (req, res) => req.method === "OPTIONS" ? 0 : 100, // limit each client to 100 requests every 30 seconds
+    max: (req, res) => req.method === "OPTIONS" ? 0 : 10, // limit each client to 10 requests every 30 seconds
     keyGenerator: (req, res) => req.header('X-CS571-ID') // throttle on BID
 }));
 
